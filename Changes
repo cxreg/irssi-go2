@@ -1,0 +1,46 @@
+1.0
+ - suggestion sorting has been totally reworked.  it should pretty much DTRT 
+   in most cases.  for details see the chart in sub _match.  among other 
+   changes, window activity level is now taken into account.
+
+0.9
+ - bugfix: type sorting should come after exact match (thanks Juerd!)
+ - if your input has a second word, this word is assumed to be (at least 
+   partially, front anchored) the network name and must match.  this helps
+   disambiguate nicknames or channels across multiple networks in a
+   deterministic way if you don't want to tab cycle.
+
+0.8
+ - /go foobar<tab> now does The Right Thing, but only in 0.8.12 or better since
+   some of the required functionality wasn't available until then.
+ - small tweak to sorting, for when you type a channel's name without the #
+
+0.7
+ *** SCRIPT NAME CHANGE ***
+ - it turns out that there's already a go.pl which is similar, but not as advanced,
+   so this script is being renamed to go2.pl.  The command itself has not changed,
+   however, and is still invoked as /go
+
+ - bugfix: squash extra results in tab-cycle when no input
+ - pressing Esc now lets you cancel
+ - less duplication in suggestions
+ - try to sort suggestions in a useful way
+ - argument form now has some better automagic matching logic (thanks to zigdon)
+
+0.6
+ - online help (/go help)
+ - allow argument to /go in order to jump directly to a location (/go #channel)
+
+0.5
+ - support matching 'tag' (network or server name)
+
+0.4
+ - display window number in suggestions and allow you to match on it
+
+0.3
+ - support ^U for clearing input
+
+0.2
+ - allow any submatch to be found, not just front-anchored
+ - display window tag (ircnet) in suggestion for disambiguation
+ - provide both name and item if both are set

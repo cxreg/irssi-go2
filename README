@@ -1,0 +1,66 @@
+This makes switching windows in irssi easier.
+
+Install it like
+
+  mkdir -p ~/.irssi/scripts
+  cp go2.pl ~/.irssi/scripts
+
+
+Load it like
+
+  /script load go2
+
+If you want it automatically loaded for you, instead do
+
+  mkdir -p ~/.irssi/scripts/autorun/
+  ln -s ~/.irssi/scripts/go2.pl ~/.irssi/scripts/autorun/
+
+
+Use it like
+
+  /go<enter>
+
+  That's the actual enter key, not the string "<enter>".  Duh.
+
+  You're then presented with a prompt
+
+    Goto:
+
+  Start typing the name of a window, its item (channel, nickname, etc), its
+  number, or its connected network.  go2.pl will attempt to guess what you
+  are looking for and suggest it in inverse text.  Pressing tab will cycle
+  through its possible suggestions.  Pressing enter again will select the
+  currently suggested window or item and switch to it for you.
+
+
+If you prefer, you can enter your destination with the command such as
+
+  /go #channel<enter>
+
+  In this case, if it finds exactly one match, you'll go directly to it.  If
+  not, you'll go to the prompt with any possible suggestions presented as usual.
+
+
+If you are using irssi 0.8.12 or better, you can also do
+
+  /go something<tab>
+
+  and it will try to guess what you meant, or else take you to the prompt.
+
+
+If you type a space and a second word, the second word is assumed to be a
+network name, which helps disambiguate your input and reduce the amount of
+tab cycling you have to do
+
+  /go foo bar
+
+
+There is online help which says more or less the same as what you read here,
+available as
+
+  /go help
+
+
+You might also find it useful to bind to a key, such as
+
+  /bind meta-w /go
